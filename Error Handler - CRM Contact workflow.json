@@ -1,0 +1,56 @@
+{
+  "name": "Error Handler - CRM Contact workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f88becbd-7791-40f8-9198-59ba3a657549",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return{\n  status: \"error\",\n  message: \"Internal workflow error\",\n  statusCode: 500\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        64,
+        -64
+      ],
+      "id": "04952576-bc79-45f6-8859-e09c3b89115b",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "6440a4fe-061e-4b7c-aa14-e523804b838d",
+  "meta": {
+    "instanceId": "8942ced4274b53b4e17d78e836ce7937d58bdc74c5c06f3e1657fe125f390dd2"
+  },
+  "nodeGroups": [],
+  "id": "aHDj2fdtLWUDfTIj",
+  "tags": []
+}
